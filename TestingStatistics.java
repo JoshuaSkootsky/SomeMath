@@ -7,9 +7,9 @@ import org.junit.Test;
 
 /**
  * The test class TestingStatistics.
- *
- * @author  (your name)
- * @version (a version number or a date)
+ * More tests could be written
+ * @Joshua Skootsky
+ * @August 13, 2014
  */
 public class TestingStatistics
 {
