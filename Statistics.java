@@ -20,8 +20,8 @@ public class Statistics
     /**
      * Calculate the arithmatic mean, given an array of values
      * 
-     * @param  y   an integer array
-     * @return     mean of y, in double form
+     * @param  xs   an  array of doubles
+     * @return     mean of xs, also a double
      */
     public double mean(double[] xs)
     {
