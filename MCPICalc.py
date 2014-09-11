@@ -1,4 +1,5 @@
 "" Calculates the constant PI using a Monte Carlo Integration method """
+""" Runs from the command line with one argument, the number of iterations, i.e. python MCPICalc.py 10000"""
 # Joshua Skootsky, 2014
 # 
 #  Get decimal division from 3.0
