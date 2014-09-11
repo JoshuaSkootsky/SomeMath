@@ -1,6 +1,6 @@
 "" Calculates the constant PI using a Monte Carlo Integration method """
-# (c) Joshua Skootsky, 2014
-# All Rights Reserved
+# Joshua Skootsky, 2014
+# 
 #  Get decimal division from 3.0
 # This is Python 2.7
 from __future__ import (absolute_import, division, print_function)
