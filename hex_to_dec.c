@@ -7,12 +7,13 @@
 
 int main(int argc, char *argv[]) {
     
-    char input[MAXLINE], copy[MAXLINE];
+    char input[MAXLINE];
     int i, c, h, j, sum, val = 0;
 
+	/* Read from file to stored 'input' array, skipping newlines */
     while ((c = getchar()) != EOF) {
         if (c == '\n' || c == '\t') {
-            ; //do nothing
+            ; /* do nothing */
         }
         else {
             input[i] = c;
@@ -20,9 +21,10 @@ int main(int argc, char *argv[]) {
         }
     }
     input[i] = '\0';
-    
-    printf("\nOriginal String:\n%s\n", input);
-    
+	
+    printf("Here is input:\n%s\nIt is %i long\n", input, i);
+	
+	/* Work around 0x intro to Hex using stateful 'h' variable */
     if (input[0] == '0' && (input[1] == 'x' || input[1] == 'X')) {
         printf("Hexadecimal supplied.\n");
         h = 2;
@@ -31,55 +33,40 @@ int main(int argc, char *argv[]) {
         printf("Assuming Hexadecimal\n");
         h = 0;
     }
-    j = 0 ;
-    i = 0 + h;
-    while (input[i] != '\0') {
-        copy[j] = input[i];
-        ++j;
-        ++i;
-    }
-    ++j;
-    copy[j] = '\0';
-    j--;
-    printf("Here is a copy:\n%s\nIt is %i long\n", copy, j);
-   
-    // Convert from base_16 to base 10
-    i = 0;
-    while (copy[i] != '\0') {
-        if (copy[i] >= 'A' && copy[i] <= 'F') {
-            switch(copy[i]) {
-                case 'A':
-                    val = 10;
-                    break;
-                case 'B':
-                    val = 11;
-                    break;
-                case 'C':
-                    val = 12;
-                    break;
-                case 'D':
-                    val = 13;
-                    break;
-                case 'E':
-                    val = 14;
-                    break;
-                case 'F':
-                    val = 15;
-                    break;
+    /* Save stateful h variable to j */
+    j = 0 + h;	
 
-                default:
-                    printf("Your switch statement needs better guards!\n");
-            }
+
+    /* Convert from base_16 to base 10 */
+    while (input[j] != '\0') {
+        // Handle Hex cases
+		switch(input[j]) {
+			case 'A':
+				val = 10;
+				break;
+            case 'B':
+				val = 11;
+                break;
+            case 'C':
+                val = 12;
+                break;
+            case 'D':
+                val = 13;
+                break;
+            case 'E':
+                val = 14;
+                break;
+			case 'F':
+                val = 15;
+                break;
+            default:
+                val = input[j] - '0';
         }
-        else {
-            val = copy[i] - '0';
-        }
-        sum = val * pow(16,j-1-i) + sum;        
-        i++;
+        /* Sum based on position in array */
+		sum = val * pow(16,i-1-j) + sum;        
+        j++;
     }
     
     printf("This is the sum:\n%i\n", sum);
     return 0;
 }
-
-
