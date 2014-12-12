@@ -40,12 +40,12 @@ int main(int argc, char *argv[]) {
     /* Convert from base_16 to base 10 */
     while (input[j] != '\0') {
         // Handle Hex cases
-		switch(input[j]) {
-			case 'A':
-				val = 10;
-				break;
+        switch(input[j]) {
+            case 'A':
+                val = 10;
+                break;
             case 'B':
-				val = 11;
+                val = 11;
                 break;
             case 'C':
                 val = 12;
@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
             case 'E':
                 val = 14;
                 break;
-			case 'F':
+            case 'F':
                 val = 15;
                 break;
             default:
