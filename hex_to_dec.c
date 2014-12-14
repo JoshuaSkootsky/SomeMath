@@ -8,7 +8,7 @@
 int main(int argc, char *argv[]) {
     
     char input[MAXLINE];
-    int i, c, j, sum, val = 0;
+    int i, c, j, sum, val;
 
 	/* Read from file to stored 'input' array, skipping newlines */
     while ((c = getchar()) != EOF) {
@@ -21,7 +21,6 @@ int main(int argc, char *argv[]) {
         }
     }
     input[i] = '\0';
-	
     printf("Here is input:\n%s\nIt is %i long\n", input, i);
 	
 	/* Work around 0x intro to Hex using stateful 'j' variable */
@@ -34,6 +33,8 @@ int main(int argc, char *argv[]) {
         j = 0;
     }
 
+
+	sum = 0;
     /* Convert from base_16 to base 10 */
     while (input[j] != '\0') {
         // Handle Hex cases
